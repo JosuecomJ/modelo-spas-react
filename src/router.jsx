@@ -5,8 +5,8 @@ import Cart from "./pages/Cart";
 import Admin from "./pages/admin/Admin";
 import RootLayout from "./pages/RootLayout";
 import Product from "./pages/Product";
-import loadProduc from "./loaders/products";
 import ProductBoundary from "./error-boundaries/ProductBoundary";
+import loadProduct from "./loaders/products";
 
 
 const  router = createBrowserRouter([
@@ -24,8 +24,8 @@ const  router = createBrowserRouter([
             {
                 path: "products/:productId",
                 element: <Product />,
-                loader: loadProduc, // para tratar erro é necessario antes ter um loader
-                errorElement: <ProductBoundary />
+                loader: loadProduct, // para tratar erro é necessario antes ter um loader
+                errorElement: <ProductBoundary /> // componente de traramento de error
             },
             {
                 path: "cart",
