@@ -1,17 +1,11 @@
-import { Link, useParams } from "react-router-dom";
-import products from "../database.json"
+import { Link, useLoaderData } from "react-router-dom";
+
 
 export default function Product(){
 
-    const {productId} = useParams()
+const product = useLoaderData()       
 
-    const product = products.find(p => p.id === +productId)
-
-    if(!product){
-        return(
-            <h2>Esse produto não foi encontrado  😓 </h2>
-        )
-    }
+ 
     return(
         <section>
             <Link to="/products"><button>Voltar</button></Link>
